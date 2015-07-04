@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>...Javascript Basics...</title>
+        <meta charset="utf-8">
+      
+	</head>
+<body>
+	<div class="sqr" style="width:100px; height:100px;background:green;"></div>
+	<!-- <input type="text" id="style" name="css_style" />
+	<input type="button" id="ok" name="Submit" value="GO!"/> -->
+	<style type="text/css">
+	* {
+		margin: 0;
+	}
+	</style>
+	<script type="text/javascript" >
+	/* var btn = document.querySelector("#ok").onclick = function (){
+	
+		var div = document.querySelector(".sqr");
+		var css = document.querySelector("#style").value.split(";");
+			//div.style["border"] = "2px dashed green";
+			//css[1] = css[1].trim();
+			
+			
+			for (var i = 0; i < css.length; i++) {
+				var property = css[i].trim().split(":");
+				div.style[property[0]] = property[1];
+			}
+			
+	} */ 
+		var div = document.querySelector(".sqr");
+		
+		
+		
+		/*var offsetLeft = 0;		
+		var	offsetDown = 0;
+		var	offsetRight = 0;
+		var	offsetUp = window.innerHeight - 120;
+		
+		var id = setInterval (function (){
+			
+			if (offsetDown < window.innerHeight - 120){
+			offsetDown += 15;
+			div.style.marginTop = offsetDown + "px";
+
+			}}, 100);
+			
+		
+			
+		var leftid = setInterval (function(){
+			
+			if (offsetDown == window.innerHeight - 120 && offsetLeft < window.innerWidth - 120){
+				offsetLeft += 15;
+				div.style.marginLeft = offsetLeft + "px";
+			}}, 100);
+
+	
+		var upid = setInterval (function(){
+
+			if (offsetLeft == 540 && offsetDown == 660){
+			offsetUp -= 15;
+			div.style.marginTop = offsetUp + "px";
+			}}, 100); */
+			
+		var direction = "right";
+		var velocity = 10;
+		var rectBounds = {
+			left: 0,
+			top: 0,
+			
+			width: 100,
+			height: 100
+		}
+			
+		var runninAnimationId = setInterval(function(){
+			
+			if(direction == "right"){
+				if(rectBounds.left + rectBounds.width > window.innerWidth){
+					direction = "bottom";
+				}else{
+					div.style.marginLeft = (rectBounds.left += velocity) + "px";
+				}
+				
+			}
+			else if (direction == "bottom"){
+				if (rectBounds.top + rectBounds.height > window.innerHeight){
+					direction = "left";
+					} else {
+					div.style.marginTop = (rectBounds.top += velocity) + "px";
+				}
+			
+			}
+			
+			else if (direction == "left"){
+				if (rectBounds.left <= 0){
+					direction = "top";
+				}	else {
+					div.style.marginLeft = (rectBounds.left -= velocity) + "px";
+				}
+			
+			}
+			
+			else if (direction == "top"){
+				if (rectBounds.top == 0){
+					direction = "right";
+				}else {
+					div.style.marginTop = (rectBounds.top -= velocity) + "px";
+				}
+			}
+			
+		}, 10);
+		
+		
+		
+		
+
+		/*var rightid = setInterval (function(){
+
+			if (offsetRight == window.innerWidth - 120){
+			offsetRight += 15;
+			div.style.marginRight = offsetRight + "px";
+			}}, id);
+			
+			if (offsetDown < offsetLeft){
+			offsetDown += 15;
+			div.style.marginTop = offsetDown + "px";
+			}
+			if (offsetRight === offsetLeft){
+			offsetRight += 15;
+			div.style.marginRight = offsetRight + "px";
+			}
+			if (offsetUp < window.innerHeight - 120){
+			offsetUp += 15;
+			div.style.marginBottom = offsetUp + "px";
+			}*/
+			
+				
+	
+	</script>
+</body>
+</html>

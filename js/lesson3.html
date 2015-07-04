@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>...Javascript Basics...</title>
+        <meta charset="utf-8">
+	</head>
+<body>
+
+<span class="example"></span>
+
+<script>
+	
+	var exampleSpan = document.querySelector(".example");
+	exampleSpan.textContent = "Hello, from Javascript";
+	exampleSpan.onclick = function(){
+		if (exampleSpan.textContent == "Hello, from Javascript") {
+			exampleSpan.textContent = "Clicked";
+		}else{
+			exampleSpan.textContent = "Hello, from Javascript";
+		}
+	}
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>... Galery ...</title>
+        <meta charset="utf-8">
+      
+		<link rel="icon" href="favicon.ico" type="image/x-icon" /> 
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	</head>
+<body>
+	<style type="text/css">
+		.show {
+			width:800px;
+			height:400px;
+			margin: 0 auto;
+			background-color: grey;
+			
+			border:2px solid orange;
+			border-radius:5px;
+			box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75)
+			
+		}
+		.btns {
+			
+			height:20px;
+			width:400px;
+			margin:0 auto;
+			text-align: center;
+			margin-top:10px;
+		}
+				
+		
+	</style>
+		
+		<div class= "show">
+		</div>
+		<div class = "btns">
+		<input type="button" id="left" value="<<<"/> 
+		<input type="button" id="right" value=">>>"/>
+		</div>
+		
+		
+	<script type="text/javascript" >
+	
+		var show = document.querySelector(".show");
+		
+		
+		var gal = ["a.jpg" , "b.jpg", "c.jpg", "d.jpg" ,"e.jpg", "f.jpg"];
+		
+		var Rbtn = document.querySelector("#right");
+		var Lbtn = document.querySelector("#left");
+		
+		
+		var i = 0;
+		Rbtn.onclick = function () {
+		
+		if (i < gal.length){
+		show.style.backgroundImage = "url("+gal[i]+")";
+		i += 1;
+		
+		}
+		}
+		
+	
+		Lbtn.onclick = function () {
+		i -= 1;
+		if (i >= 0 && i <= gal.length){
+		show.style.backgroundImage = "url("+gal[i]+")";
+		
+		}
+		}
+	
+	
+	</script>
+	
+</body>
+</html>
